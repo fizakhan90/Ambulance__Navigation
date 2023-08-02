@@ -1,4 +1,49 @@
 #map{
-    height: 100vh;
-    width: 100vw;
+    height: 100px;
+    width: 200px;
 }
+ nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 15px;
+    margin-right: 25px;
+}
+
+#title{
+    font-size: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+
+.user-option,.navigation-option{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 300px;
+    margin-top: 200px;
+}
+
+button{
+    margin-top: 25px;
+}
+
+
