@@ -69,3 +69,19 @@ button:hover{
 ul li a{
     color: #FF033E;
 }
+ul li::after{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #FF033E;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 300ms ease;
+}
+ul li:hover::after{
+    transform: scaleX(1);
+}
+p{
+    font-family: monospace;
+}
