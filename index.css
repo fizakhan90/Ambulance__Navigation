@@ -1,7 +1,9 @@
+
 #map{
     height: 100px;
     width: 200px;
 }
+
  nav{
     display: flex;
     justify-content: space-between;
@@ -13,6 +15,7 @@ ul{
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    font-family: monospace;
 }
 a{
     text-decoration: none;
@@ -23,7 +26,11 @@ a{
 }
 
 #title{
+    font-family:monospace ;
     font-size: 30px;
+    font-weight: bolder;
+    color: #FF033E;
+
 }
 
 .container{
@@ -44,6 +51,37 @@ a{
 
 button{
     margin-top: 25px;
+    background-color: #FF033E;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 20px;
+    color: white;
+    transition: padding 300ms ease;
+    font-weight: bolder;
+    font-size: medium;
 }
+button:hover{
+    padding: 30px;
 
-
+}
+ul li a{
+    color: #FF033E;
+}
+ul li::after{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #FF033E;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 300ms ease;
+}
+ul li:hover::after{
+    transform: scaleX(1);
+}
+p{
+    font-family: monospace;
+}
