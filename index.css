@@ -1,11 +1,14 @@
+
 #map{
     height: 100px;
     width: 200px;
 }
+
  nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #FF033E;
  }
 
 ul{
@@ -44,6 +47,20 @@ a{
 
 button{
     margin-top: 25px;
+    background-color: #FF033E;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 20px;
+    color: white;
+    transition: padding 300ms ease;
+    font-weight: bolder;
+    font-size: medium;
+}
+button:hover{
+    padding: 30px;
+
 }
 
 
