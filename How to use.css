@@ -29,41 +29,6 @@ a{
 
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-}
-
-
-.user-option,.navigation-option{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    width: 400px;
-    margin-top: 200px;
-    font-size: 20px;
-    padding: 35px;
-}
-
-button{
-    margin-top: 25px;
-    background-color: #FF033E;
-    border: none;
-    padding: 20px;
-    cursor: pointer;
-    user-select: none;
-    border-radius: 20px;
-    color: white;
-    transition: padding 300ms ease;
-    font-weight: bolder;
-    font-size: medium;
-}
-button:hover{
-    padding: 30px;
-
-}
 ul li a{
     color: #FF033E;
 }
@@ -80,8 +45,18 @@ ul li::after{
 ul li:hover::after{
     transform: scaleX(1);
 }
-
-p{
+#For-Patient,#For-Paramedics{
+    margin-top: 100px;
+    height: 200px;
+    width: 50%;
+    border-left: 4px solid #FF033E;
+    padding: 10px 40px 10px;
+}
+h2 {
+    color: #FF033E;
+    font-family: monospace;
+}
+p {
     font-family: 'GFS Didot', serif;
-    font-weight: bolder;
+    font-weight: bold;
 }
