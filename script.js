@@ -2,9 +2,40 @@ function customerFunction(){
     window.location.href = 'customer.html';
 };
 
-var map = L.map('map').setView([51.505, -0.09], 13);
+const initializeMap = (lat,lon)=>{
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-}).addTo(map);
+    const map = L.map('map').setView([lat, lon], 20);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      const marker = L.marker([lat, lon]).addTo(map);
+      marker.bindPopup("User Location").openPopup();
+
+}
+
+if("geolocation" in navigator){
+
+    navigator.geolocation.getCurrentPosition(
+
+        (position) =>{
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            console.log(`latitude: ${lat}, longitude: ${lon}`);
+            initializeMap(lat,lon)
+        },
+
+        (error) => {
+            console.error("Error getting user location:", error);
+        },
+
+        
+);
+
+}else{
+    console.error("Geolocation is not supported by this browser.");
+}
+
+
