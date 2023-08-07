@@ -2,20 +2,29 @@ function customerFunction(){
     window.location.href = 'customer.html';
 };
 
-const initializeMap = (lat,lon)=>{
 
-    const map = L.map('map').setView([lat, lon], 20);
+const initMap = (lat,lon) =>{
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
+    map = new mappls.Map('map', {
+        center: [lat, lon],
+        zoomControl: true,
+        location: true
+      });
+      Marker1 = new mappls.Marker({
+        map: map,
+        position: {
+          lat,
+          lon
+        },
+        fitbounds: true,
+        
+      });
 
-      const marker = L.marker([lat, lon]).addTo(map);
-      marker.bindPopup("User Location").openPopup();
+      map_object.panTo({lat: lat,lng: lng});
 
 }
-
-if("geolocation" in navigator){
+  
+ if("geolocation" in navigator){
 
     navigator.geolocation.getCurrentPosition(
 
@@ -24,7 +33,8 @@ if("geolocation" in navigator){
             const lon = position.coords.longitude;
 
             console.log(`latitude: ${lat}, longitude: ${lon}`);
-            initializeMap(lat,lon)
+            initMap(lat,lon)
+        
         },
 
         (error) => {
@@ -36,6 +46,6 @@ if("geolocation" in navigator){
 
 }else{
     console.error("Geolocation is not supported by this browser.");
-}
+}  
 
 
