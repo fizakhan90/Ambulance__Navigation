@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-family: monospace;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    padding: 15px;
+    margin-right: 25px;
+}
+
+#title{
+    font-family:monospace ;
+    font-size: 35px;
+    font-weight: bolder;
+    color: #FF033E;
+
+}
+
+ul li a{
+    color: #FF033E;
+}
+ul li::after{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #FF033E;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 300ms ease;
+}
+ul li:hover::after{
+    transform: scaleX(1);
+}
+
+h1{
+    color: #FF033E;
+    font-family: monospace;
+    font-weight: bolder;
+    filter: drop-shadow(5px 5px 5px grey);
+}
+h3 {
+    font-size: 20px;
+    color: #FF033E;
+    font-family: monospace;
+}
+p {
+    font-family: 'GFS Didot', serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.Patient,.Driver{
+    margin-top: 50px;
+    height: 150px;
+    width: 50%;
+    border-left: 4px solid #FF033E;
+    padding: 10px 40px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'GFS Didot', serif;
+}
+#header{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    margin-top: 25px;
+    height: 250px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer>*{
+    color: white;
+    font-size: 16px;
+}
+footer a{
+    font-size: 16px;
+}
