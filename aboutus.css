@@ -30,7 +30,8 @@ a{
 }
 
 ul li a{
-    color: #FF033E;
+    color: #FF033E; 
+    
 }
 ul li::after{
     content: "";
@@ -50,7 +51,6 @@ h1{
     color: #FF033E;
     font-family: monospace;
     font-weight: bolder;
-    filter: drop-shadow(5px 5px 5px grey);
 }
 h3 {
     font-size: 20px;
@@ -81,8 +81,8 @@ p {
 }
 footer{
     margin-top: 25px;
-    height: 250px;
-    background-color: black;
+    height: 200px;
+    background-color: #B25444;
     display: flex;
     justify-content: center;
     align-items: center;
