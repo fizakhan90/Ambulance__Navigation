@@ -45,18 +45,9 @@ ul li::after{
 ul li:hover::after{
     transform: scaleX(1);
 }
-#For-Patient,#For-Paramedics{
+#accordionExample{
     margin-top: 100px;
     height: 200px;
-    width: 50%;
-    border-left: 4px solid #FF033E;
-    padding: 10px 40px 10px;
-}
-h2 {
-    color: #FF033E;
-    font-family: monospace;
-}
-p {
-    font-family: 'GFS Didot', serif;
-    font-weight: bold;
+    width: 30%;
+    padding-left: 40px;
 }

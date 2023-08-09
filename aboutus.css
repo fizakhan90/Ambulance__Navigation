@@ -20,7 +20,6 @@ a{
     padding: 15px;
     margin-right: 25px;
 }
-
 #title{
     font-family:monospace ;
     font-size: 35px;
@@ -30,8 +29,7 @@ a{
 }
 
 ul li a{
-    color: #FF033E; 
-    
+    color: #FF033E;
 }
 ul li::after{
     content: "";
@@ -46,46 +44,27 @@ ul li::after{
 ul li:hover::after{
     transform: scaleX(1);
 }
-
-h1{
-    color: #FF033E;
-    font-family: monospace;
-    font-weight: bolder;
+#accordionExample{
+    margin-top: 100px;
+    height: 200px;
+    width: 30%;
+    padding-left: 40px;
 }
-h3 {
-    font-size: 20px;
-    color: #FF033E;
-    font-family: monospace;
+svg{
+    height: 500px;
+    width: 400px;
 }
-p {
-    font-family: 'GFS Didot', serif;
-    font-weight: bold;
-    font-size: 20px;
+.start-50{
+    left: 80% !important;
 }
-.Patient,.Driver{
-    margin-top: 50px;
-    height: 150px;
-    width: 50%;
-    border-left: 4px solid #FF033E;
-    padding: 10px 40px 10px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'GFS Didot', serif;
-}
-#header{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.top-50{
+    top: 35% !important;
 }
 footer{
     margin-top: 25px;
-    height: 200px;
-    background-color: #B25444;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 250px;
+    background-color: black;
+    opacity: 0.8;
 }
 footer>*{
     color: white;
@@ -93,4 +72,11 @@ footer>*{
 }
 footer a{
     font-size: 16px;
+}
+.info{
+    font-size: 12px;
+    padding-left: 20px;
+}
+footer p{
+    margin-top: 30px;
 }
