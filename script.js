@@ -6,50 +6,41 @@ function driverFunction(){
     window.location.href='driver.html';
 };
 
-
-const initMap = (lat,lon) =>{
+function initMap(lat,lon){
 
     map = new mappls.Map('map', {
-        center: [lat, lon],
-        zoomControl: true,
-        location: true
-      });
-      Marker1 = new mappls.Marker({
-        map: map,
-        position: {
-          lat,
-          lon
-        },
-        fitbounds: true,
-        
-      });
-
-      map_object.panTo({lat: lat,lng: lng});
-
+        center:{
+            lat: lat,
+            lng: lon
+        }});
+    
+    marker = new mappls.Marker({
+            map: map,
+            position: {"lat": lat,"lng": lon},
+            
+            });
 }
   
- if("geolocation" in navigator){
 
+
+
+
+if("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(
 
-        (position) =>{
+        (position) => {
+            
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
 
             console.log(`latitude: ${lat}, longitude: ${lon}`);
             initMap(lat,lon)
-        
         },
 
-        (error) => {
-            console.error("Error getting user location:", error);
-        },
-
-        
-);
-
-}else{
+        (error) =>{
+            console.error("Error getting user location:", error)
+        }
+    )
+} else{
     console.error("Geolocation is not supported by this browser.");
-}  
-
-
+}
