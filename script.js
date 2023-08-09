@@ -2,6 +2,10 @@ function customerFunction(){
     window.location.href = 'customer.html';
 };
 
+function driverFunction(){
+    window.location.href='driver.html';
+};
+
 
 const initMap = (lat,lon) =>{
 
