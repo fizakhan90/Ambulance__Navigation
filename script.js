@@ -6,6 +6,9 @@ function driverFunction(){
     window.location.href='driver.html';
 };
 
+
+
+
 function initMap(lat,lon){
 
     map = new mappls.Map('map', {
@@ -17,14 +20,9 @@ function initMap(lat,lon){
     marker = new mappls.Marker({
             map: map,
             position: {"lat": lat,"lng": lon},
-            
             });
 }
   
-
-
-
-
 if("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(
 
