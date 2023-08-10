@@ -6,24 +6,17 @@ function driverFunction(){
     window.location.href='driver.html';
 };
 
-function initMap(lat,lon){
+const initMap = (lat,lon) =>{
+    var map = L.map('map').setView([lat, lon], 15);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
 
-    map = new mappls.Map('map', {
-        center:{
-            lat: lat,
-            lng: lon
-        },
-        zoom : 18
-    });
-    
-    marker = new mappls.Marker({
-            map: map,
-            position : {"lat": lat,"lng": lon},
-            });
+var marker = L.marker([lat, lon]).addTo(map);
 
-        }     
-            
-  
+} 
+
 if("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(
 
@@ -43,3 +36,6 @@ if("geolocation" in navigator){
 } else{
     console.error("Geolocation is not supported by this browser.");
 }
+            
+  
+

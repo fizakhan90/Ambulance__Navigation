@@ -1,8 +1,3 @@
-function driverFunction(){
-    window.location.href='driver.html';
-};
-
-
 
 const initMap = (lat,lon) =>{
     var map = L.map('map').setView([lat, lon], 15);
@@ -13,28 +8,35 @@ const initMap = (lat,lon) =>{
 
 var marker = L.marker([lat, lon]).addTo(map);
 
-var popup = L.popup();
+var ghRouting = new GraphHopper.Routing({
+    key: '355f9c3e-b759-440d-80ac-3a9610ea4832',
+    vehicle: 'ambulance', 
+  });
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
+  var startingLocation = [lat, lon];
+
+  var radius = 2000;
+  var poiType= 'hospital';
+
+  
+ghRouting.clearPoints();
+ghRouting.addPoint(startingLocation[0], startingLocation[1]);
+
+ghRouting.doRequest('pointofinterest')
+  .then(function (json) {
+    var pois = json.pois;
+    pois.forEach(function (poi) {
+      var poiMarker = L.marker([poi.lat, poi.lon]).addTo(map);
+      poiMarker.bindPopup(poi.name);
+    });
+  })
+  .catch(function (err) {
+    console.error('Error finding nearby points of interest:', err);
+  });
+
+
 }
-
-map.on('click', onMapClick)
-
-}
     
-        
-    
-    
-    
-    
-    
-
-
-
 if("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(
 
@@ -54,3 +56,10 @@ if("geolocation" in navigator){
 } else{
     console.error("Geolocation is not supported by this browser.");
 }
+    
+    
+    
+    
+
+
+
