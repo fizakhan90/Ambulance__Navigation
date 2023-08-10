@@ -6,22 +6,23 @@ function driverFunction(){
     window.location.href='driver.html';
 };
 
-
-
-
 function initMap(lat,lon){
 
     map = new mappls.Map('map', {
         center:{
             lat: lat,
             lng: lon
-        }});
+        },
+        zoom : 18
+    });
     
     marker = new mappls.Marker({
             map: map,
-            position: {"lat": lat,"lng": lon},
+            position : {"lat": lat,"lng": lon},
             });
-}
+
+        }     
+            
   
 if("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(
